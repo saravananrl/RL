@@ -1,0 +1,10 @@
+default["deploy_upgrade_catalyst"]["catalystCallbackUrl"] = "http://supercatalyst.relevancelab.com/app/deploy"
+#"http://supercatalyst.relevancelab.com/app/deploy"
+#"http://d4d.rlcatalyst.com/app/deploy
+default["rlcatalyst"]["nexusUrl"] = "http://10.0.1.92:8081/nexus/content/repositories/catalyst/org/catalyst/D4D/2.10.0/D4D-2.10.0.zip"
+default["rlcatalyst"]["version"] = "2.10.0"
+default["deploy_upgrade_catalyst"]["target_dir"] = "/opt"
+default["deploy_upgrade_catalyst"]["download_dir"] = "/tmp"
+default['deploy_upgrade_catalyst']['target_dir'] = "NA"
+default['rlcatalyst']['containerId'] = "NA"
+default['rlcatalyst']['containerPort'] = "NA"

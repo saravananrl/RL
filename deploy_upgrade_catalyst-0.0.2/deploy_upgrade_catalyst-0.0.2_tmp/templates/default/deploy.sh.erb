@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# kill running apps
+killall node && echo "success"
+
+# Pull the build frome nexus
+cd <%=@target%>/<%=@repoid%>/<%=@package%>/server
+sudo node install --seed-data
+sudo forever start app.js
+
