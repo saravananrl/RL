@@ -28,8 +28,8 @@ bash 'install_something' do
   cwd '/opt/tomcat'
   install_path = '/opt/tomcat/webapps'
   code <<-EOH
-  wget http://mirror.sdunix.com/apache/tomcat/tomcat-7/v7.0.65/bin/apache-tomcat-7.0.65.tar.gz
-  tar -xvf apache-tomcat-7.0.65.tar.gz -C /opt/tomcat --strip-components=1
+  wget http://mirror.sdunix.com/apache/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.tar.gz
+  tar -xvf apache-tomcat-7.0.67.tar.gz -C /opt/tomcat --strip-components=1
   EOH
   not_if { ::File.exists?(install_path) }
 end
@@ -52,4 +52,13 @@ service 'iptables' do
   action [ :disable, :stop ]
 end
 
+template '/opt/tomcat/webapps/ROOT/index.html' do
+	 source 'default_page.erb'
+  # attributes for owner, group, mode
+  variables(
+    :Server_Name => node['FQDN'],
+    # more variables
+    :IP_ADDR => node['IP']
+  )
+end
 
