@@ -1,0 +1,15 @@
+{
+   "filter": {
+    "json": {
+        "source" :  "message"
+    }
+  },
+  "files": [
+    {
+      "paths": [
+        "<%= node['linux']['lsf']['logpath'] %>"
+       ],
+      "fields": { "type": "catalyst" , "instance" : "SuperCat" }
+    }
+   ]
+}

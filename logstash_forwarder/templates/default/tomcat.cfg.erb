@@ -1,0 +1,20 @@
+{                                                                                                                                                      
+  "filter": {                                                                   
+    "json": {                                                                   
+        "source": "message"                                                     
+    }                                                                           
+  },                                                                            
+  "files": [                                                                    
+    {                                                                           
+      "paths": [                                                                
+         "<%= node['linux']['lsf']['logpath'] %>/catalina*"                                           
+       ],                                                                       
+      "fields": { "type": "tomcat7-catalina" }                                  
+    },{                                                                         
+      "paths": [                                                                
+        "<%= node['linux']['lsf']['logpath'] %>/localhost_access_log*"                               
+       ],                                                                       
+      "fields": { "type": "tomcat7-access" }                                    
+    }                                               
+  ]
+}
